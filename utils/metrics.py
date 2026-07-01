@@ -12,7 +12,7 @@ class Metrics():
         '''
         Input: pd.Series of logarithmic returns of price data
 
-        Output: a floating point number corresponding to the return of investment as a percent
+        Output: a floating point number corresponding to the return of investment (multiply by 100 to get the percent)
 
         Terminal Return:
             This approach ignores intermediate retuns and only considers the initial and terminal (final) asset prices; a simplified view of the asset price's grouth. 
