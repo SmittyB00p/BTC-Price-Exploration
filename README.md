@@ -12,28 +12,28 @@ Below are two graphs showing different price ranges. The top graph from January 
 
 To create a baseline for comparison between the select strategies that we will cover, we will calculate a few metrics such as:
 
-    * terminal rate:
-        - this approach ignores intermediate retuns and only considers the initial and terminal (final) asset prices; a simplified view of the asset price's grouth.
+* terminal rate:
+    - this approach ignores intermediate retuns and only considers the initial and terminal (final) asset prices; a simplified view of the asset price's grouth.
 
-    * annualized return:
-        - this metric compares different assets that might have different time-scales.
+* annualized return:
+    - this metric compares different assets that might have different time-scales.
 
-    * volatility:
-        - this metric is the standard deviation (measure of volatility) of the returns. Measuring "how large the prices swing around the mean price and serves as a direct measure of the dispersion of returns." (Python for Algorithmic Trading) This metric plays an important role in assessing the risk tolerance in a portfolio.
+* volatility:
+    - this metric is the standard deviation (measure of volatility) of the returns. Measuring "how large the prices swing around the mean price and serves as a direct measure of the dispersion of returns." (Python for Algorithmic Trading) This metric plays an important role in assessing the risk tolerance in a portfolio.
 
-    * annualized volatility:
-        - like the annualized return, this metric measures the volatility of different assets on different time-scales.
+* annualized volatility:
+    - like the annualized return, this metric measures the volatility of different assets on different time-scales.
 
-    * sharpe ratio:
-        - More accurate assessment of investment's performance relative to overall market conditions. Where
-        higher => investment yields higher returns for the same level of risk compared to other investments or the overall market.
+* sharpe ratio:
+    - More accurate assessment of investment's performance relative to overall market conditions. Where
+    higher => investment yields higher returns for the same level of risk compared to other investments or the overall market.
 
-    * max drawdown:
-        -
+* max drawdown:
+    -
 
 Mainly looking at the terminal rate and the max drawdown for comparison.
 
-|----------- Strategy -----------|---- Terminal Rate ----|---- Max Drawdown ----|
+|            Strategy            |     Terminal Rate     |     Max Drawdown     |
 |                                |                       |                      |
 |           Buy-n-Hold           |                       |                      |
 |                                |                       |                      |
