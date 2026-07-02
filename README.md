@@ -34,14 +34,15 @@ To create a baseline for comparison between the select strategies that we will c
 Mainly looking at the terminal rate and the max drawdown for comparison.
 
 |            Strategy            |     Terminal Rate     |     Max Drawdown     |
-|                                |                       |                      |
+|--------------------------------|-----------------------|----------------------|
 |           Buy-n-Hold           |                       |                      |
-|                                |                       |                      |
+|--------------------------------|-----------------------|----------------------|
 |         Trend-Following        |                       |                      |
-|                                |                       |                      |
+|--------------------------------|-----------------------|----------------------|
 |            Momentum            |                       |                      |
-|                                |                       |                      |
+|--------------------------------|-----------------------|----------------------|
 |         Mean Reversion         |                       |                      |
+|--------------------------------|-----------------------|----------------------|
 
 ### Moving Averages
 
