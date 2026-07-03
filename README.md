@@ -35,6 +35,7 @@ Mainly looking at the terminal rate and the max drawdown for comparison.
 
 |          Strategy          |            Historical Prices         |                Backtest              |
 |----------------------------|-------------------|------------------|-------------------|------------------|
+|                            |                   |                  |                   |                  |
 |                            |   Terminal Rate   |   Max Drawdown   |   Terminal Rate   |   Max Drawdown   |
 |----------------------------|-------------------|------------------|-------------------|------------------|
 |         Buy-n-Hold         |      201.05%      |                  |                   |                  |
