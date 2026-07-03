@@ -34,7 +34,6 @@ Using Peng Liu's book *Quantitative Trading Strategies Using Python: Technical A
 Mainly looking at the terminal rate and the max drawdown for comparison.
 
 |          Strategy          |            Historical Prices         |                Backtest              |
-|----------------------------|-------------------|------------------|-------------------|------------------|
 |                            |                   |                  |                   |                  |
 |                            |   Terminal Rate   |   Max Drawdown   |   Terminal Rate   |   Max Drawdown   |
 |----------------------------|-------------------|------------------|-------------------|------------------|
