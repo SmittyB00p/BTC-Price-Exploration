@@ -41,10 +41,10 @@ Mainly looking at the terminal rate and the max drawdown for comparison.
         <th>
             Strategy
         </th>
-        <th clospan="3">
+        <th colspan="3">
             Historical Prices (2016-2020)
         </th>
-        <th>
+        <th colspan="3">
             Backtest (2021-2025)
         </th>
     </tr>
