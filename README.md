@@ -74,29 +74,78 @@ Mainly looking at the terminal rate and the max drawdown for comparison.
 
    <tbody>
     <tr>
+        <td>
+            Buy-n-Hold
+        </td>
+        <td>
+            6540.27%
+        </td>
+        <td>
+            1.71
+        </td>
+        <td>
+            187.00%
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
     </tr>
     <tr>
+        <td>
+            Trend-Following (50 and 200-day SMA)
+        </td>
+        <td>
+            2484.21%
+        </td>
+        <td>
+        </td>
+        <td>
+            9.00%
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
     </tr>
     <tr>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
     </tr>
     <tr>
-</tr>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+    </tr>
    </tbody>
 </table>
-
-|          Strategy          |              Historical Prices (2016-2020)        |                Backtest (2021-2025)               |
-|----------------------------|-----------------|----------------|----------------|-----------------|----------------|----------------|
-|                            |                 |                |                |                 |                |                |
-|                            |  Terminal Rate  |  Sharpe Ratio  |  Max Drawdown  |  Terminal Rate  |  Sharpe Ratio  |  Max Drawdown  |
-|----------------------------|-----------------|----------------|----------------|-----------------|----------------|----------------|
-|         Buy-n-Hold         |     6540.27%    |      1.71      |    187.00%     |                 |                |                |
-|                            |                 |                |                |                 |                |                |
-|    Trend-Following (SMA)   |      2484.21%   |                |     9.00%      |                 |                |                |
-|                            |                 |                |                |                 |
-|         Momentum           |                 |                |                |                 |
-|                            |                 |                |                |                 |
-|       Mean Reversion       |                 |                |                |                 |
-|                            |                 |                |                |                 |
 
 ## Strategies
 
