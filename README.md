@@ -48,7 +48,27 @@ Mainly looking at the terminal rate and the max drawdown for comparison.
             Backtest (2021-2025)
         </td>
     </tr>
-    <tr>
+        <td>
+        </td>
+        <td>
+            Terminal Rate
+        </td>
+        <td>
+            Sharpe Ratio
+        </td>
+        <td>
+            Max Drawdown
+        </td>
+        <td>
+            Terminal Rate
+        </td>
+        <td>
+            Sharpe Ratio
+        </td>
+        <td>
+            Max Drawdown
+        </td>
+    <tr>    
     </tr>
    </thead>
 
