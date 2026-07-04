@@ -38,36 +38,36 @@ Mainly looking at the terminal rate and the max drawdown for comparison.
 <table>
    <thead>
     <tr>
-        <td>
+        <th>
             Strategy
-        </td>
-        <td clospan="3">
+        </th>
+        <th clospan="3">
             Historical Prices (2016-2020)
-        </td>
-        <td>
+        </th>
+        <th>
             Backtest (2021-2025)
-        </td>
+        </th>
     </tr>
-        <td>
-        </td>
-        <td>
+        <th>
+        </th>
+        <th>
             Terminal Rate
-        </td>
-        <td>
+        </th>
+        <th>
             Sharpe Ratio
-        </td>
-        <td>
+        </th>
+        <th>
             Max Drawdown
-        </td>
-        <td>
+        </th>
+        <th>
             Terminal Rate
-        </td>
-        <td>
+        </th>
+        <th>
             Sharpe Ratio
-        </td>
-        <td>
+        </th>
+        <th>
             Max Drawdown
-        </td>
+        </th>
     <tr>    
     </tr>
    </thead>
