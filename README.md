@@ -35,17 +35,17 @@ Using Peng Liu's book *Quantitative Trading Strategies Using Python: Technical A
 
 Mainly looking at the terminal rate and the max drawdown for comparison.
 
-|          Strategy          |    Historical Prices (2016-2020)     |         Backtest (2021-2025)         |
-|                            |   Terminal Rate   |   Max Drawdown   |   Terminal Rate   |   Max Drawdown   |
-|----------------------------|-------------------|------------------|-------------------|------------------|
-|         Buy-n-Hold         |      4184.76%     |                  |      187.00%      |                  |
-|                            |                   |                  |                   |                  |
-|    Trend-Following (SMA)   |      2484.21%     |                  |       9.00%       |                  |
-|                            |                   |                  |                   |                  |
-|         Momentum           |                   |                  |                   |                  |
-|                            |                   |                  |                   |                  |
-|       Mean Reversion       |                   |                  |                   |                  |
-|                            |                   |                  |                   |                  |
+|          Strategy          |              Historical Prices (2016-2020)        |                Backtest (2021-2025)               |
+|                            |  Terminal Rate  |  Sharpe Ratio  |  Max Drawdown  |  Terminal Rate  |  Sharpe Ratio  |  Max Drawdown  |
+|----------------------------|-----------------|----------------|----------------|-----------------|----------------|----------------|
+|         Buy-n-Hold         |     6540.27%    |      1.71      |    187.00%     |                 |                |                |
+|                            |                 |                |                |                 |                |                |
+|    Trend-Following (SMA)   |      2484.21%   |                |     9.00%      |                 |                |                |
+|                            |                 |                  |                   |                  |
+|         Momentum           |                 |                  |                   |                  |
+|                            |                 |                  |                   |                  |
+|       Mean Reversion       |                 |                  |                   |                  |
+|                            |                 |                  |                   |                  |
 
 ## Strategies
 
