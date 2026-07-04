@@ -41,7 +41,9 @@ Mainly looking at the terminal rate and the max drawdown for comparison.
         <td>
             Strategy
         </td>
+        <td>
             Historical Prices (2016-2020)
+        </td>
         <td>
             Backtest (2021-2025)
         </td>
