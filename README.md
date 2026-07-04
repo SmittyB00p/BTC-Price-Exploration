@@ -35,6 +35,33 @@ Using Peng Liu's book *Quantitative Trading Strategies Using Python: Technical A
 
 Mainly looking at the terminal rate and the max drawdown for comparison.
 
+<table>
+   <thead>
+    <tr>
+        <td>
+            Strategy
+        </td>
+            Historical Prices (2016-2020)
+        <td>
+            Backtest (2021-2025)
+        </td>
+    </tr>
+    <tr>
+    </tr>
+   </thead>
+
+   <tbody>
+    <tr>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+</tr>
+   </tbody>
+</table>
+
 |          Strategy          |              Historical Prices (2016-2020)        |                Backtest (2021-2025)               |
 |----------------------------|-----------------|----------------|----------------|-----------------|----------------|----------------|
 |                            |                 |                |                |                 |                |                |
@@ -43,11 +70,11 @@ Mainly looking at the terminal rate and the max drawdown for comparison.
 |         Buy-n-Hold         |     6540.27%    |      1.71      |    187.00%     |                 |                |                |
 |                            |                 |                |                |                 |                |                |
 |    Trend-Following (SMA)   |      2484.21%   |                |     9.00%      |                 |                |                |
-|                            |                 |                  |                   |                  |
-|         Momentum           |                 |                  |                   |                  |
-|                            |                 |                  |                   |                  |
-|       Mean Reversion       |                 |                  |                   |                  |
-|                            |                 |                  |                   |                  |
+|                            |                 |                |                |                 |
+|         Momentum           |                 |                |                |                 |
+|                            |                 |                |                |                 |
+|       Mean Reversion       |                 |                |                |                 |
+|                            |                 |                |                |                 |
 
 ## Strategies
 
