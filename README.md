@@ -44,7 +44,7 @@ Mainly looking at the terminal rate and the max drawdown for comparison.
         <td clospan="3">
             Historical Prices (2016-2020)
         </td>
-        <td colspan="3">
+        <td>
             Backtest (2021-2025)
         </td>
     </tr>
