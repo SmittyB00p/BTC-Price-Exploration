@@ -107,8 +107,8 @@ Mainly looking at the terminal rate and the max drawdown for comparison.
         <td>
             9.00%
         </td>
-            187.00%
         <td>
+            187.00%
         </td>
         <td>
         </td>
