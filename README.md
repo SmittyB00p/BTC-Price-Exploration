@@ -1,8 +1,8 @@
 # &#x20BF; Bitcoin Price Exploration and Strategy Experimentation
 
-Bitcoin can be described as a peer-to-peer network that does not need a trusted third party to ensure the validity of electronic transactions. The bitcoin network started in early 2009 and the price of bitcoin at that time was hardly noteworthy. For the first few years it stayed under $5/coin. But in the recent years, with decentralized money coming into vogue in the wider population, institutional adoption, such as ETF's provided by Fidelity, BlackRock, and the like, and other factors leading to people and companies alike to find alternative "risk on" assets during times of financial panic, bitcoin has shown that it might have a small-medium size place in ones portfolio in the coming decades. 
+Bitcoin can be described as a peer-to-peer network that does not need a trusted third party to ensure the validity of electronic transactions. The bitcoin network started in early 2009 and the price of bitcoin at that time was hardly noteworthy. For the first few years it stayed under $5/bitcoin. But in the recent years, with decentralized money coming into vogue in the wider population, institutional adoption, such as ETF's provided by Fidelity, BlackRock, and the like, and other factors leading to people and companies alike to find alternative "risk on" assets during times of financial panic, bitcoin has shown that it might have a small-medium size place in ones portfolio in the coming decades. 
 
-This notebook looks at the bitcoin price over the last 10 years; 2016 - 2020 as an exploratory timeframe, and 2021 - 2025 as a backtest period for different strategy implementations.
+This notebook follows both Peng Liu's *Quantitative Trading Strategies Using Python: Technical Analysis, Statistical Testing, and Machine Learning* and Yves Hilpisch's *Python for Algorithmic Trading* to look at metrics, scripts used for backtesting purposes and trading strategies for bitcoin over the last 10 years; 2016 - 2020 as an exploratory timeframe, and 2021 - 2025 as a backtest period for different strategy implementations.
 
 Below are two types of graphs, one showing different price movements and the other showing a boxplot of all the close prices during the same time frame. The top row is from January 2016 - December 2020. And the second, from January 2021 - December 2025.
 
@@ -12,28 +12,29 @@ Below are two types of graphs, one showing different price movements and the oth
 
 ## Metrics
 
-Using Peng Liu's book *Quantitative Trading Strategies Using Python: Technical Analysis, Statistical Testing, and Machine Learning* as a guide, we'll calculate a few metrics that will be helpful to benchmark a few trading strategies.
+We will mainly look at the terminal return of bitcoin throughout this notebook, but if we were to compare bitcoin to other stocks, currencies, or commodities, the metrics below would give a good idea of the returns and risk associated with these assets.
 
 * terminal rate:
     - this approach ignores intermediate retuns and only considers the initial and terminal (final) asset prices; a simplified view of the asset price's grouth.
 
 * annualized return:
-    - this metric compares different assets that might have different time-scales.
+    - this metric compares different assets that might have different time-scales of returns. Bitcoin's returns are daily, but other assets might be monthly, quarterly, or yearly.
 
 * volatility:
     - this metric is the standard deviation (measure of volatility) of the returns. Measuring "how large the prices swing around the mean price and serves as a direct measure of the dispersion of returns." This metric plays an important role in assessing the risk tolerance in a portfolio.
 
+    The higher the volatility, the higher the risk.
+
 * annualized volatility:
-    - like the annualized return, this metric measures the volatility of different assets on different time-scales.
+    - like the annualized return, this metric measures the volatility of different assets on different time-scale returns.
 
 * sharpe ratio:
-    - More accurate assessment of investment's performance relative to overall market conditions. Where
-    higher => investment yields higher returns for the same level of risk compared to other investments or the overall market.
+    - More accurate assessment of investment's performance relative to overall market conditions. 
+    
+    Higher ratio => investment yields higher returns for the same level of risk compared to other investments or the overall market.
 
 * max drawdown:
     - measures the worst case scenario - buy high, sell low. It is not a sure-fire metric for backtesting purposes because of it's sensativity to outliers, but might be interesting to look at because of how different the exploratory data and backtest data are.
-
-Mainly looking at the terminal rate and the max drawdown for comparison.
 
 <table>
    <thead>
@@ -41,10 +42,10 @@ Mainly looking at the terminal rate and the max drawdown for comparison.
         <th>
             Strategy
         </th>
-        <th colspan="3">
+        <th colspan="2">
             Historical Prices (2016-2020)
         </th>
-        <th colspan="3">
+        <th colspan="2">
             Backtest (2021-2025)
         </th>
     </tr>
@@ -54,16 +55,10 @@ Mainly looking at the terminal rate and the max drawdown for comparison.
             Terminal Rate
         </th>
         <th>
-            Sharpe Ratio
-        </th>
-        <th>
             Max Drawdown
         </th>
         <th>
             Terminal Rate
-        </th>
-        <th>
-            Sharpe Ratio
         </th>
         <th>
             Max Drawdown
@@ -81,15 +76,10 @@ Mainly looking at the terminal rate and the max drawdown for comparison.
             6540.27%
         </td>
         <td>
-            .005
-        </td>
-        <td>
             34.47
         </td>
         <td>
             9.00%
-        </td>
-        <td>
         </td>
         <td>
         </td>
@@ -102,15 +92,10 @@ Mainly looking at the terminal rate and the max drawdown for comparison.
             2484.21%
         </td>
         <td>
-            1.67
-        </td>
-        <td>
             9.00%
         </td>
         <td>
             187.00%
-        </td>
-        <td>
         </td>
         <td>
         </td>
@@ -127,18 +112,10 @@ Mainly looking at the terminal rate and the max drawdown for comparison.
         </td>
         <td>
         </td>
-        <td>
-        </td>
-        <td>
-        </td>
     </tr>
     <tr>
         <td>
             Mean Reversion
-        </td>
-        <td>
-        </td>
-        <td>
         </td>
         <td>
         </td>
