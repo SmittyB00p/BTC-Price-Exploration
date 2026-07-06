@@ -81,12 +81,13 @@ Mainly looking at the terminal rate and the max drawdown for comparison.
             6540.27%
         </td>
         <td>
-            1.71
+            .005
         </td>
         <td>
-            187.00%
+            34.47
         </td>
         <td>
+            9.00%
         </td>
         <td>
         </td>
@@ -101,10 +102,12 @@ Mainly looking at the terminal rate and the max drawdown for comparison.
             2484.21%
         </td>
         <td>
+            1.67
         </td>
         <td>
             9.00%
         </td>
+            187.00%
         <td>
         </td>
         <td>
@@ -114,6 +117,7 @@ Mainly looking at the terminal rate and the max drawdown for comparison.
     </tr>
     <tr>
         <td>
+            Momentum
         </td>
         <td>
         </td>
@@ -130,6 +134,7 @@ Mainly looking at the terminal rate and the max drawdown for comparison.
     </tr>
     <tr>
         <td>
+            Mean Reversion
         </td>
         <td>
         </td>
