@@ -139,7 +139,7 @@ This chart shows the cumulative returns of bitcoin and the cumulative returns of
 
 Backtest of 50 and 200-day moving averages over 2021-2025:
 
-![sma-backtest](/images/sma_backtest.png)
+![sma-backtest](/images/sma-backtest.png)
 
 This next chart shows the same as the last, but instead, using the .1 and .5-EWMA.
 
