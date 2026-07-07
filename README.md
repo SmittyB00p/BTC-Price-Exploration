@@ -78,7 +78,7 @@ We will mainly look at the terminal return of bitcoin throughout this notebook, 
         <td>
         </td>
         <td>
-            187.00%
+            170.00%
         </td>
         <td>
         </td>
@@ -100,13 +100,15 @@ We will mainly look at the terminal return of bitcoin throughout this notebook, 
     </tr>
     <tr>
         <td>
-            Momentum
+            Momentum (2-day)
+        </td>
+        <td>
+            46,729.13%
         </td>
         <td>
         </td>
         <td>
-        </td>
-        <td>
+            393.00%
         </td>
         <td>
         </td>
@@ -127,11 +129,6 @@ We will mainly look at the terminal return of bitcoin throughout this notebook, 
    </tbody>
 </table>
 
-*Note*
-The EWMA trend-following strategy gave a vastly better terminal return, but becuase it places more weight on the more recent prices, it is more prone to trigger buy/sell signals more often and thus eat any profits that might occur with the fees associated. 
-
-The EWMA had a total of 125 buy/sell signals whereas the SMA strategy only had 7.
-
 ## Strategies
 
 ### Moving Averages
@@ -140,12 +137,27 @@ This chart shows the cumulative returns of bitcoin and the cumulative returns of
 
 ![sma-trend-following-chart](/images/sma-trend-following-strat.png)
 
+Backtest of 50 and 200-day moving averages over 2021-2025:
+
+![sma-backtest](/images/sma_backtest.png)
+
 This next chart shows the same as the last, but instead, using the .1 and .5-EWMA.
 
-![ewma-trend-following-chart](/images/ewma-trend-following-chart.png)
+![ewma-trend-following-chart](/images/ewma-trend-following-strat.png)
 
-**Both charts do not include fees**
+I do not include the backtested EWMA because of the exponential price chart that appears in both historical and backtested price ranges.
+
+**ALL charts do NOT include fees**
+
+*Note*
+The EWMA trend-following strategy gave a vastly better terminal return, but becuase it places more weight on the more recent prices, it is more prone to trigger buy/sell signals more often and thus eat any profits that might occur with the fees associated. 
+
+The EWMA had a total of 125 buy/sell signals whereas the SMA strategy only had 7.
 
 ### Momentum
+
+![momentum-windows](/images/momentum_windows.png)
+
+![momentum-backtest](/images/momentum_backtest.png)
 
 ### Mean Reversion
