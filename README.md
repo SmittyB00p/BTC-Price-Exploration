@@ -133,6 +133,18 @@ We will mainly look at the terminal return of bitcoin throughout this notebook, 
 
 ## Moving Averages
 
+Moving averages can also help identify support and resistance levels. Support level is a price/range where the price has had trouble falling below over a certain period, whereas the resistance level is one where the price has had trouble breaking past.
+
+When short-term moving average crosses above the long-term moving average, it signals a buy action (enter long position).
+
+When the oposite happens it signals a sell action (enter short position).
+
+**If only one trend line**, the strategy works the same. If the price is greater than the moving average this signals a buy action, and vice versa.
+
+Below, the chart shows the buy and sell signals:
+
+![sma-price-signals](/images/sma-price-signals.png)
+
 This chart shows the cumulative returns of bitcoin and the cumulative returns of the trend-following strategy over the period 2016-2020.
 
 ![sma-trend-following-chart](/images/sma-trend-following-strat.png)
@@ -140,6 +152,10 @@ This chart shows the cumulative returns of bitcoin and the cumulative returns of
 Backtest of 50 and 200-day moving averages over 2021-2025:
 
 ![sma-backtest](/images/sma-backtest.png)
+
+This next chart shows the buy/sell signals for the EWMA strategy:
+
+![ewma-price-signals](/images/ewma-price-signals.png)
 
 This next chart shows the same as the last, but instead, using the .1 and .5-EWMA.
 
@@ -155,6 +171,8 @@ I do not include the backtested EWMA because of the exponential price chart that
 *The EWMA had a total of 125 buy/sell signals whereas the SMA strategy only had 7.*
 
 ## Momentum
+
+Here, Strategy-0 is equivalent to the cumulative return of bitcoin over the 5 year period.
 
 ![momentum-windows](/images/momentum_windows.png)
 
