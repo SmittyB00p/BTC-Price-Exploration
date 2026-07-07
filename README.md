@@ -73,7 +73,7 @@ We will mainly look at the terminal return of bitcoin throughout this notebook, 
             Buy-n-Hold
         </td>
         <td>
-            6540.27%
+            6,540.27%
         </td>
         <td>
         </td>
@@ -88,7 +88,7 @@ We will mainly look at the terminal return of bitcoin throughout this notebook, 
             Trend-Following (50 and 200-day SMA)
         </td>
         <td>
-            4351.54%
+            4,351.54%
         </td>
         <td>
         </td>
@@ -131,7 +131,7 @@ We will mainly look at the terminal return of bitcoin throughout this notebook, 
 
 ## Strategies
 
-### Moving Averages
+## Moving Averages
 
 This chart shows the cumulative returns of bitcoin and the cumulative returns of the trend-following strategy over the period 2016-2020.
 
@@ -150,11 +150,11 @@ I do not include the backtested EWMA because of the exponential price chart that
 **ALL charts do NOT include fees**
 
 *Note*
-The EWMA trend-following strategy gave a vastly better terminal return, but becuase it places more weight on the more recent prices, it is more prone to trigger buy/sell signals more often and thus eat any profits that might occur with the fees associated. 
+*The EWMA trend-following strategy gave a vastly better terminal return, but becuase it places more weight on the more recent prices, it is more prone to trigger buy/sell signals more often and thus eat any profits that might occur with the fees associated.*
 
-The EWMA had a total of 125 buy/sell signals whereas the SMA strategy only had 7.
+*The EWMA had a total of 125 buy/sell signals whereas the SMA strategy only had 7.*
 
-### Momentum
+## Momentum
 
 ![momentum-windows](/images/momentum_windows.png)
 
