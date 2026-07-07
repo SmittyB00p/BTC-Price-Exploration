@@ -30,7 +30,7 @@ class Metrics():
     def annualized_return(data, period: int=365):
         '''
         Input: 
-            data: pd.Series of logarithmic returns of price data
+            data: pd.Series of 1+returns of price data
             period: integer corresponding to the number of trading days. If the price data is the whole year, then the number will be 252, if the pricing data is from cryptocurrencies or other assets that trade 24/7, then this number will be 365. If looking at quarterly price data, then the number will be 4.
 
         Output: a floating point number corresponding to the annualized return as a percent
@@ -38,8 +38,8 @@ class Metrics():
         Auunualizing Returns:
             This metric compares different assets that might have different time-scales.
         '''
-
-        return np.exp(data).prod()**(period/data.shape[0]) - 1
+    
+        return data.prod()**(period/data.shape[0])-1
 
     def volatility(data):
         '''
@@ -73,17 +73,14 @@ class Metrics():
         Output: floating point number corresponding to sharpe ratio as a percent
 
         Sharpe Ratio:
-            Risk-free rate is typically the Treasury bill or bond.
+            More accurate assessment of investment's performance relative to overall market conditions.
 
             Higher -> investment yields higher returns for the same level of risk compared to other investments or the overall market.
-
-            More accurate assessment of investment's performance relative to overall market conditions.
         '''
 
         excess_return = annualized_returns - risk_free_rate
-        sharpe_ratio = excess_return / annualized_volatility
 
-        return sharpe_ratio
+        return excess_return / annualized_volatility
 
     def drawdown(return_series: pd.Series, init_investment: float=1.0):
         '''
