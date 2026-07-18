@@ -55,7 +55,7 @@ We will mainly look at the terminal return of bitcoin throughout this notebook, 
             Terminal Rate
         </th>
         <th>
-            Max Drawdown
+            Annualized Returns
         </th>
         <th>
             Terminal Rate
@@ -76,6 +76,7 @@ We will mainly look at the terminal return of bitcoin throughout this notebook, 
             6,540.27%
         </td>
         <td>
+            131.44%
         </td>
         <td>
             170.00%
@@ -92,6 +93,7 @@ We will mainly look at the terminal return of bitcoin throughout this notebook, 
             4,351.54%
         </td>
         <td>
+            113.65%
         </td>
         <td>
             9.00%
@@ -108,6 +110,7 @@ We will mainly look at the terminal return of bitcoin throughout this notebook, 
             46,729.13%
         </td>
         <td>
+            241.92%
         </td>
         <td>
             393.00%
@@ -208,4 +211,6 @@ The advanced trading strategy will use the momentum indicator, as shown above, t
 
 Below are the historical and backtested data.
 
-![advanced-trading-strategy](/images/advanced_trading_strategy.png)
+![advanced-trading-strategy-historical](/images/advanced_trading_strategy_historical.png)
+
+![advanced-trading-strategy-backtest](/images/advanced_trading_strategy_backtest.png)
