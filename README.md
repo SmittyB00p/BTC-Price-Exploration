@@ -202,7 +202,7 @@ Coming Soon
 
 ### Advanced Trading Strategy
 
-1[multiple-indicators-chart](/images/multiple_indicators.png)
+![multiple-indicators-chart](/images/multiple_indicators.png)
 
 The advanced trading strategy will use the momentum indicator, as shown above, to capture the momentum of the market. If that momentum signal is either positive or negative, then the DI+/- and ATR indicators will be checked to assess the volatility and ulitimately, decide whether the prices indicate whether to enter a long/short position.
 
