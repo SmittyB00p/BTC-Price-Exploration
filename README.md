@@ -81,6 +81,7 @@ We will mainly look at the terminal return of bitcoin throughout this notebook, 
             170.00%
         </td>
         <td>
+            76.63%
         </td>
     </tr>
     <tr>
@@ -96,6 +97,7 @@ We will mainly look at the terminal return of bitcoin throughout this notebook, 
             9.00%
         </td>
         <td>
+            107.17%
         </td>
     </tr>
     <tr>
@@ -111,11 +113,25 @@ We will mainly look at the terminal return of bitcoin throughout this notebook, 
             393.00%
         </td>
         <td>
+            100.62%
         </td>
     </tr>
     <tr>
         <td>
             Mean Reversion
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Advanced Strategy
         </td>
         <td>
         </td>
@@ -172,6 +188,8 @@ I do not include the backtested EWMA because of the exponential price chart that
 
 ## Momentum
 
+The momentum strategy focuses on exploiting market herding behavior that represents the most significant price movements.
+
 Here, Strategy-0 is equivalent to the cumulative return of bitcoin over the 5 year period.
 
 ![momentum-windows](/images/momentum_windows.png)
@@ -179,3 +197,15 @@ Here, Strategy-0 is equivalent to the cumulative return of bitcoin over the 5 ye
 ![momentum-backtest](/images/momentum_backtest.png)
 
 ### Mean Reversion
+
+Coming Soon
+
+### Advanced Trading Strategy
+
+1[multiple-indicators-chart](/images/multiple_indicators.png)
+
+The advanced trading strategy will use the momentum indicator, as shown above, to capture the momentum of the market. If that momentum signal is either positive or negative, then the DI+/- and ATR indicators will be checked to assess the volatility and ulitimately, decide whether the prices indicate whether to enter a long/short position.
+
+Below are the historical and backtested data.
+
+![advanced-trading-strategy](/images/advanced_trading_strategy.png)
