@@ -2,7 +2,13 @@
 
 Bitcoin can be described as a peer-to-peer network that does not need a trusted third party to ensure the validity of electronic transactions. The bitcoin network started in early 2009 and the price of bitcoin at that time was hardly noteworthy. For the first few years it stayed under $5/bitcoin. But in the recent years, with decentralized money coming into vogue in the wider population, institutional adoption, such as ETF's provided by Fidelity, BlackRock, and the like, and other factors leading to people and companies alike to find alternative "risk on" assets during times of financial panic, bitcoin has shown that it might have a small-medium size place in ones portfolio in the coming decades. 
 
-This notebook follows both Peng Liu's *Quantitative Trading Strategies Using Python: Technical Analysis, Statistical Testing, and Machine Learning* and Yves Hilpisch's *Python for Algorithmic Trading* to look at metrics, scripts used for backtesting purposes and trading strategies for bitcoin over the last 10 years; 2016 - 2020 as an exploratory timeframe, and 2021 - 2025 as a backtest period for different strategy implementations.
+This notebook follows both Peng Liu's *Quantitative Trading Strategies Using Python: Technical Analysis, Statistical Testing, and Machine Learning* and Yves Hilpisch's *Python for Algorithmic Trading* to look at metrics, scripts used for backtesting purposes, and trading strategies for bitcoin over the last 10 years; 2016 - 2020 as an exploratory timeframe, and 2021 - 2025 as a backtest period for different strategy implementations. 
+
+Links to the online books are below...
+
+[Python for Algo Trading](https://learning.oreilly.com/library/view/python-for-algorithmic/9781492053347/)
+
+[Quant Trading Strategies for Python](https://learning.oreilly.com/library/view/quantitative-trading-strategies/9781484296752/)
 
 Below are two types of graphs, one showing different price movements and the other showing a boxplot of all the close prices during the same time frame. The top row is from January 2016 - December 2020. And the second, from January 2021 - December 2025.
 
@@ -137,8 +143,10 @@ We will mainly look at the terminal return of bitcoin throughout this notebook, 
             Advanced Strategy
         </td>
         <td>
+            46792.13%
         </td>
         <td>
+            241.92%
         </td>
         <td>
         </td>
