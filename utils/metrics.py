@@ -85,7 +85,7 @@ class Metrics():
     def drawdown(return_series: pd.Series, init_investment: float=1.0):
         '''
         Input: 
-            return_series: pd.Series of logarithmic asset returns
+            return_series: pd.Series of asset returns (1+R format)
             init_investment: floating point number that corresponds to an investment amount. Default = 1.0, which tracks the underlying assets return over specified time-frame. 
     
         Output: pd.DataFrame that contains:
@@ -98,12 +98,12 @@ class Metrics():
         '''
 
         # wealth_index_series = init_investment * (1 + return_series).cumprod()
-        wealth_index_series = init_investment * (np.exp(return_series.cumsum()))
+        wealth_index_series = init_investment * (return_series.cumprod())
 
         prior_peaks_series = wealth_index_series.cummax()
 
-        # drawdown_series = (wealth_index_series - prior_peaks_series) / prior_peaks_series
-        drawdown_series = prior_peaks_series - wealth_index_series
+        drawdown_series = (wealth_index_series - prior_peaks_series) / prior_peaks_series
+        # drawdown_series = prior_peaks_series - wealth_index_series
 
         return pd.DataFrame({
             "Wealth Index": wealth_index_series,

@@ -137,10 +137,10 @@ We will mainly look at the terminal return of bitcoin throughout this notebook, 
             Advanced Strategy
         </td>
         <td>
-            46,792.13%
+            3,066.67%
         </td>
         <td>
-            241.92%
+            99.51%
         </td>
         <td>
         </td>
@@ -207,12 +207,15 @@ Coming Soon
 
 ### Advanced Trading Strategy
 
-![multiple-indicators-chart](/images/multiple_indicators.png)
+<!-- ![multiple-indicators-chart](/images/multiple_indicators.png) -->
 
-The advanced trading strategy will use the momentum indicator, as shown above, to capture the momentum of the market. If that momentum signal is either positive or negative, then the DI+/- and ATR indicators will be checked to assess the volatility and ulitimately, decide whether the prices indicate whether to enter a long/short position.
+The advanced trading strategy will use the momentum indicator, as shown above, to capture the momentum of the market. Just because the market is moving in a certain direction on any given period, that doesn't necessarily mean that the trend should be bought/sold into. If there is high volatility then traders can get wiped out by fees, and that is where stop losses can play a role. 
+One such indicator is the ATR or average true range, that gives a decent indicator of volatilty. Another indicator is the Directional Indicator (DI+/-) that gives a decent indication on where the market is trending. Using these as additional indicators let us see how the strategy compares to the others.
 
-Below are the historical and backtested data.
+The first chart below might look messy at first, but when we look at the blue ATR line, notice that the buy/sell icons on the bottom hardly show up during the periods when the ATR line is above its mean, indicating that this is a period of high volatility in either the upward/downward direction. The DI+/- indicators in the background are added to show the messiness of price direction and why it is crutial to have additional idicators for stop loss purposes.
 
-![advanced-trading-strategy-historical](/images/advanced_trading_strategy_historical.png)
+The second chart is the backtested advanced strategy.
+
+![advanced-trading-strategy-historical](/images/scaled-advanced-indicators.png)
 
 ![advanced-trading-strategy-backtest](/images/advanced_trading_strategy_backtest.png)
