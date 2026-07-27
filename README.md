@@ -124,12 +124,16 @@ We will mainly look at the terminal return of bitcoin throughout this notebook, 
             Mean Reversion
         </td>
         <td>
+            -20.00%
         </td>
         <td>
+            -4.36%
         </td>
         <td>
+            10.00%
         </td>
         <td>
+            NaN
         </td>
     </tr>
     <tr>

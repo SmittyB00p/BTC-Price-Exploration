@@ -307,4 +307,69 @@ class EventBacktestMomentum(MomentumBacktest):
 
         return round(cperf, 2), round(sperf, 2)
 
+
+class MeanReversion(MomentumBacktest):
+    def strategy(self, sma=int, threshold=float):
+        '''
+        Parameters:
+            - sma: a positive simple moving average window
+            - threshold: a positive value which equates to the absolute deviation of the current price to deviate form the SMA given.
+        '''
+
+        self.name = "Mean Reversion Strategy"
+        self.sma = sma
+        self.threshold = threshold
+        self.position = 0 ## neutral position
+        self.trades = 0 # no trades yet
+        self.amount = self.amount ## reset initial capital
+
+        data = self.data.copy().dropna()
+
+        data["SMA"] = data["Close"].rolling(self.sma).mean()
+
+        data["distance"] = data["Close"] - data["SMA"]
+
+        data["position"] = np.where(data["distance"] > threshold, -1, np.nan)
+        data["position"] = np.where(data["distance"] < -threshold, 1, data["position"])
+        data["position"] = np.where(data["distance"] * data["distance"].shift(1) < 0, 0, data["position"])
+
+        data["position"] = data["position"].ffill().fillna(0)
+
+        ## log returns of strategy
+        data["mr_strategy"] = data["position"].shift(1) * data["log_returns"]
+        self.data = data
+
+        data["action"] = data["mr_strategy"].diff().fillna(0) != 0
+
+        self.trans_cost = self.trans_cost/self.amount
+
+        data.loc[data["action"], "mr_strategy"] -= self.trans_cost
+
+        self.cum_returns = np.exp(data['log_returns'].cumsum())
+        self.cum_returns_trend = np.exp(data["mr_strategy"].cumsum())
+
+        ## multiplies the amount invested with the cumulative returns
+        data['cumulative_returns'] = self.amount * self.cum_returns
+        data['cumulative_strategy'] = self.amount * self.cum_returns_trend
+        self.results = data
+
+        # performance of strategy
+        cperf = self.results['cumulative_returns'].iloc[-1]
+        sperf = self.results['cumulative_strategy'].iloc[-1]
+
+        return round(cperf, 2), round(sperf, 2)
+
+
+    def plot_strategy(self):
+        if self.results is None:
+            print(f'No strategy implemented. Please run a {MeanReversion.__name__} strategy.')
+        else:
+            self.results[['cumulative_returns', 'cumulative_strategy']].plot(kind='line',
+                                                      label=['Cumulative Returns', 'Strategy'],
+                                                      title=f"{self.name} using a {self.sma} day rolling average\nTransaction Cost: ${self.trans_cost}/transaction",
+                                                      ylabel='Price ($)',
+                                                      xlabel='Date',
+                                                      grid=True
+                                                      )
+
 # if __name__ == '__main__':
