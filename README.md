@@ -174,11 +174,11 @@ Below, the chart shows the buy and sell signals:
 
 This chart shows the cumulative returns of bitcoin and the cumulative returns of the trend-following strategy over the period 2016-2020.
 
-![sma-trend-following-chart](/images/sma-trend-following-strat.png)
+![sma-trend-following-chart](/images/sma-trend-following-strat-revised.png)
 
 Backtest of 50 and 200-day moving averages over 2021-2025:
 
-![sma-backtest](/images/sma-backtest.png)
+![sma-backtest](/images/sma-backtest-revised.png)
 
 This next chart shows the buy/sell signals for the EWMA strategy:
 
