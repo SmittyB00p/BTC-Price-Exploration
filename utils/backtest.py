@@ -87,7 +87,7 @@ class MomentumBacktest():
         else:
             self.results[['cumulative_returns', 'cumulative_strategy']].plot(kind='line',
                                                       label=['Cumulative Returns', 'Strategy'],
-                                                      title=f"{self.name} using a {self.momentum} day rolling average\nTransaction Cost: ${self.trans_cost}/transaction",
+                                                      title=f"{self.name} using a {self.momentum} day rolling average\nTransaction Cost: ${round(self.trans_cost, 4)}/transaction",
                                                       ylabel='Price ($)',
                                                       xlabel='Date',
                                                       grid=True
@@ -162,8 +162,6 @@ class MovingAverageBackTest(MomentumBacktest):
         ## sell signal
         data['sma-signal'] = np.where(data['SMA-short'] < data['SMA-long'], -1, data['sma-signal'])
 
-        data.dropna(inplace=True)
-
         # log returns of trend follow
         data['strategy'] = data['sma-signal'] * data['log_returns']
         self.data = data
@@ -203,8 +201,6 @@ class MovingAverageBackTest(MomentumBacktest):
         ## sell signal
         data['ewm-signal'] = np.where(data['ewm-short'] < data['ewm-long'], -1, data['ewm-signal'])
 
-        data.dropna(inplace=True)
-
         data['strategy'] = data['ewm-signal'] * data['log_returns']
         self.data = data
 
@@ -235,7 +231,7 @@ class MovingAverageBackTest(MomentumBacktest):
         try:
             self.results[['cumulative_returns', 'cumulative_strategy']].plot(kind='line',
                                                       label=['Cumulative Returns', 'Strategy'],
-                                                      title=f"Moving Average Strategy using a {self.ewm1}- and {self.ewm2}-day moving average\nTransaction Cost: ${self.trans_cost}/transaction",
+                                                      title=f"Moving Average Strategy using a {self.ewm1}- and {self.ewm2}-day moving average\nTransaction Cost: ${round(self.trans_cost, 4)}/transaction",
                                                       ylabel='Price ($)',
                                                       xlabel='Date',
                                                       grid=True
@@ -244,7 +240,7 @@ class MovingAverageBackTest(MomentumBacktest):
         except:
             self.results[['cumulative_returns', 'cumulative_strategy']].plot(kind='line',
                                                       label=['Cumulative Returns', 'Strategy'],
-                                                      title=f"Moving Average Strategy using a {self.sma1}- and {self.sma2}-day moving average\nTransaction Cost: ${self.trans_cost}/transaction",
+                                                      title=f"Moving Average Strategy using a {self.sma1}- and {self.sma2}-day moving average\nTransaction Cost: ${round(self.trans_cost, 4)}/transaction",
                                                       ylabel='Price ($)',
                                                       xlabel='Date',
                                                       grid=True
@@ -357,7 +353,7 @@ class MeanReversion(MomentumBacktest):
         else:
             self.results[['cumulative_returns', 'cumulative_strategy']].plot(kind='line',
                                                       label=['Cumulative Returns', 'Strategy'],
-                                                      title=f"{self.name} using a {self.sma} day rolling average\nTransaction Cost: ${self.trans_cost}/transaction",
+                                                      title=f"{self.name} using a {self.sma} day rolling average\nTransaction Cost: ${round(self.trans_cost, 4)}/transaction",
                                                       ylabel='Price ($)',
                                                       xlabel='Date',
                                                       grid=True

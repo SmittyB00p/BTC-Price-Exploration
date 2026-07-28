@@ -96,7 +96,7 @@ We will mainly look at the terminal return of bitcoin throughout this notebook, 
             113.65%
         </td>
         <td>
-            9.00%
+            41.00%
         </td>
         <td>
             -54.77%
