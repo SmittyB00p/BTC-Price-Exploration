@@ -27,8 +27,7 @@ class MomentumBacktest():
         self.trans_cost = trans_cost
         self.amount = amount
         self.results = None
-        # self.volatility = None
-        # self.volatility_trend = None
+        self.name = "Momentum"
         self.get_data()
 
     def get_data(self):
@@ -53,6 +52,7 @@ class MomentumBacktest():
         data = self.data.copy().dropna()
         data['close_sign'] = np.sign(data['log_returns'].rolling(momentum).mean())
         data['strategy'] = data['log_returns'] * data['close_sign'].shift(1)
+        self.data = data
 
         # determines trade signal
         data.dropna(inplace=True)
@@ -96,8 +96,10 @@ class MomentumBacktest():
     def get_terminal_return(self):
         '''Returns terminal return as a decimal value.'''
         terminal_return = (self.cum_returns - 1).tolist()[-1]
+        terminal_return = Metrics.terminal_return(self.data["log_returns"])
         
         terminal_return_trend = (self.cum_returns_trend - 1).tolist()[-1]
+        terminal_return_trend = Metrics.terminal_return(self.data["strategy"])
 
         return round(terminal_return, 2), round(terminal_return_trend, 2)
 
@@ -135,9 +137,9 @@ class MomentumBacktest():
 
 
     def get_drawdown(self):
-        asset_drawdown = Metrics.drawdown(self.data["log_returns"])["Drawdown"].min()
+        asset_drawdown = Metrics.drawdown(np.exp(self.data["log_returns"]))["Drawdown"].min()
 
-        strat_drawdown = Metrics.drawdown(self.cum_returns_trend - 1)["Drawdown"].min()
+        strat_drawdown = Metrics.drawdown(self.cum_returns_trend)["Drawdown"].min()
 
         return asset_drawdown, strat_drawdown
 
@@ -163,17 +165,17 @@ class MovingAverageBackTest(MomentumBacktest):
         data.dropna(inplace=True)
 
         # log returns of trend follow
-        data['sma-strategy'] = data['sma-signal'] * data['log_returns']
+        data['strategy'] = data['sma-signal'] * data['log_returns']
         self.data = data
         
         # trades
         sma_trades = data['sma-signal'].diff().fillna(0) != 0
 
         self.trans_cost = self.trans_cost/self.amount
-        data.loc[sma_trades, 'sma-strategy'] -= self.trans_cost
+        data.loc[sma_trades, 'strategy'] -= self.trans_cost
 
         self.cum_returns = np.exp(data['log_returns'].cumsum())
-        self.cum_returns_trend = np.exp(data["sma-strategy"].cumsum())
+        self.cum_returns_trend = np.exp(data["strategy"].cumsum())
 
         ## multiplies the amount invested with the cumulative returns
         data['cumulative_returns'] = self.amount * self.cum_returns
@@ -203,17 +205,17 @@ class MovingAverageBackTest(MomentumBacktest):
 
         data.dropna(inplace=True)
 
-        data['ewm-strategy'] = data['ewm-signal'] * data['log_returns']
+        data['strategy'] = data['ewm-signal'] * data['log_returns']
         self.data = data
 
         ewm_trades = data['ewm-signal'].diff().fillna(0) != 0
 
         self.trans_cost = self.trans_cost/self.amount
 
-        data.loc[ewm_trades, 'ewm-strategy'] -= self.trans_cost
+        data.loc[ewm_trades, 'strategy'] -= self.trans_cost
 
         self.cum_returns = np.exp(data['log_returns'].cumsum())
-        self.cum_returns_trend = np.exp(data["ewm-strategy"].cumsum())
+        self.cum_returns_trend = np.exp(data["strategy"].cumsum())
 
         ## multiplies the amount invested with the cumulative returns
         data['cumulative_returns'] = self.amount * self.cum_returns
@@ -226,38 +228,27 @@ class MovingAverageBackTest(MomentumBacktest):
 
         return round(cperf, 2), round(sperf, 2)
 
-    def get_drawdown(self):
-        asset_drawdown = Metrics.drawdown(self.data["returns"])["Drawdown"].min()
-
+    def plot_strategy(self):
+        if self.results is None:
+            print(f'No strategy implemented. Please run a {MovingAverageBackTest.__name__} strategy.')
+        
         try:
-            strat_drawdown = Metrics.drawdown(np.exp(self.data["ewm-strategy"])-1)["Drawdown"].min()
-
+            self.results[['cumulative_returns', 'cumulative_strategy']].plot(kind='line',
+                                                      label=['Cumulative Returns', 'Strategy'],
+                                                      title=f"Moving Average Strategy using a {self.ewm1}- and {self.ewm2}-day moving average\nTransaction Cost: ${self.trans_cost}/transaction",
+                                                      ylabel='Price ($)',
+                                                      xlabel='Date',
+                                                      grid=True
+                                                      )
+        
         except:
-            strat_drawdown = Metrics.drawdown(np.exp(self.data["sma-strategy"])-1)["Drawdown"].min()
-
-        return asset_drawdown, strat_drawdown
-
-    # def plot_strategy(self):
-    #     if self.results is None:
-    #         print(f'No strategy implemented. Please run a {MovingAverageBackTest.__name__} strategy.')
-        
-    #     try:
-    #         self.results[['cumulative_returns', 'cumulative_strategy']].plot(kind='line',
-    #                                                   label=['Cumulative Returns', 'Strategy'],
-    #                                                   title=f"Moving Average Strategy using a {self.ewm1}- and {self.ewm2}-day moving average\nTransaction Cost: ${self.trans_cost}/transaction",
-    #                                                   ylabel='Price ($)',
-    #                                                   xlabel='Date',
-    #                                                   grid=True
-    #                                                   )
-        
-    #     except:
-    #         self.results[['cumulative_returns', 'cumulative_strategy']].plot(kind='line',
-    #                                                   label=['Cumulative Returns', 'Strategy'],
-    #                                                   title=f"Moving Average Strategy using a {self.sma1}- and {self.sma2}-day moving average\nTransaction Cost: ${self.trans_cost}/transaction",
-    #                                                   ylabel='Price ($)',
-    #                                                   xlabel='Date',
-    #                                                   grid=True
-    #                                                   )
+            self.results[['cumulative_returns', 'cumulative_strategy']].plot(kind='line',
+                                                      label=['Cumulative Returns', 'Strategy'],
+                                                      title=f"Moving Average Strategy using a {self.sma1}- and {self.sma2}-day moving average\nTransaction Cost: ${self.trans_cost}/transaction",
+                                                      ylabel='Price ($)',
+                                                      xlabel='Date',
+                                                      grid=True
+                                                      )
 
 class EventBacktestMomentum(MomentumBacktest):
     def strategy(self, momentum:int = 14):
@@ -280,7 +271,7 @@ class EventBacktestMomentum(MomentumBacktest):
         data["momentum_signal"] = np.where(data['atr'] < data['atr'].mean(), 1, -1)
 
         ## log returns of strategy
-        data["adv_momentum_strat"] = data["momentum_signal"].shift(1) * data["log_returns"]
+        data["strategy"] = data["momentum_signal"].shift(1) * data["log_returns"]
         self.data = data
 
         data["action"] = data["momentum_signal"].diff().fillna(0) != 0
@@ -291,10 +282,10 @@ class EventBacktestMomentum(MomentumBacktest):
 
         # adv_sell_signal = data[(data['momentum_signal'] < 0) & (data['di+'] < data['di-']) & (data['atr'] > data["atr"].mean())][data.action == -2]
 
-        data.loc[data["action"], "adv_momentum_strat"] -= self.trans_cost
+        data.loc[data["action"], "strategy"] -= self.trans_cost
 
         self.cum_returns = np.exp(data['log_returns'].cumsum())
-        self.cum_returns_trend = np.exp(data["adv_momentum_strat"].cumsum())
+        self.cum_returns_trend = np.exp(data["strategy"].cumsum())
 
         ## multiplies the amount invested with the cumulative returns
         data['cumulative_returns'] = self.amount * self.cum_returns
@@ -336,17 +327,17 @@ class MeanReversion(MomentumBacktest):
         data["position"] = data["position"].ffill().fillna(0)
 
         ## log returns of strategy
-        data["mr_strategy"] = data["position"].shift(1) * data["log_returns"]
+        data["strategy"] = data["position"].shift(1) * data["log_returns"]
         self.data = data
 
-        data["action"] = data["mr_strategy"].diff().fillna(0) != 0
+        data["action"] = data["strategy"].diff().fillna(0) != 0
 
         self.trans_cost = self.trans_cost/self.amount
 
-        data.loc[data["action"], "mr_strategy"] -= self.trans_cost
+        data.loc[data["action"], "strategy"] -= self.trans_cost
 
         self.cum_returns = np.exp(data['log_returns'].cumsum())
-        self.cum_returns_trend = np.exp(data["mr_strategy"].cumsum())
+        self.cum_returns_trend = np.exp(data["strategy"].cumsum())
 
         ## multiplies the amount invested with the cumulative returns
         data['cumulative_returns'] = self.amount * self.cum_returns

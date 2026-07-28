@@ -98,7 +98,7 @@ class Metrics():
         '''
 
         # wealth_index_series = init_investment * (1 + return_series).cumprod()
-        wealth_index_series = init_investment * (return_series.cumprod())
+        wealth_index_series = init_investment * return_series
 
         prior_peaks_series = wealth_index_series.cummax()
 

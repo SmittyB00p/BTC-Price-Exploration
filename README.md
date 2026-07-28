@@ -52,13 +52,13 @@ We will mainly look at the terminal return of bitcoin throughout this notebook, 
         <th>
         </th>
         <th>
-            Terminal Rate
+            Terminal Return
         </th>
         <th>
             Annualized Returns
         </th>
         <th>
-            Terminal Rate
+            Terminal Return
         </th>
         <th>
             Max Drawdown
@@ -99,7 +99,7 @@ We will mainly look at the terminal return of bitcoin throughout this notebook, 
             9.00%
         </td>
         <td>
-            107.17%
+            -54.77%
         </td>
     </tr>
     <tr>
@@ -113,10 +113,10 @@ We will mainly look at the terminal return of bitcoin throughout this notebook, 
             241.92%
         </td>
         <td>
-            393.00%
+            361.00%
         </td>
         <td>
-            100.62%
+            -51.59%
         </td>
     </tr>
     <tr>
@@ -133,7 +133,7 @@ We will mainly look at the terminal return of bitcoin throughout this notebook, 
             10.00%
         </td>
         <td>
-            NaN
+            -63.32%
         </td>
     </tr>
     <tr>
